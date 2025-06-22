@@ -1,0 +1,201 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+}
+nav .nav-left {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  margin: 0 10px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+#nav-toggle {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  #nav-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+}
+
+/* Sections */
+section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Home section (Logo Animation) */
+#logo-animation {
+  position: relative;
+  width: 30vmin;
+  aspect-ratio: 595/842;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.logo-part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.logo-part.part1 {
+  animation: fadeInUp 0.8s ease-out 0s forwards;
+}
+.logo-part.part2 {
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+.logo-part.part3 {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+/* Text Sections (Introduction, About, Contact) */
+.text-section {
+  padding: 80px 20px 20px 20px;  /* extra top padding avoids content under nav */
+}
+.text-section .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.text-section.centered-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.text-section.centered-content .content {
+  text-align: left;
+}
+
+/* About Me section */
+#about {
+  padding-top: 120px;
+  padding-bottom: 60px;
+}
+
+/* Project Sections (Portfolio Projects) */
+.project-section {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000; /* fallback background color */
+}
+.project-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.project-content {
+  position: relative;
+  z-index: 1;
+  max-width: 80%;
+  padding: 0 20px;
+}
+.project-content h2 {
+  margin: 0;
+  font-size: 3em;
+}
+.project-content .tagline {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 10px 0 0 0;
+}
+
+/* Project background images (replace with actual image paths) */
+#happybag { background: url('../img/happybag.jpg') center center/cover no-repeat; }
+#comi { background: url('../img/comi.jpg') center center/cover no-repeat; }
+#mechanism { background: url('../img/mechanism.jpg') center center/cover no-repeat; }
+#scooter { background: url('../img/scooter.jpg') center center/cover no-repeat; }
+#welding-projects { background: url('../img/welding-projects.jpg') center center/cover no-repeat; }
+#digital-drawing { background: url('../img/digital-drawing.jpg') center center/cover no-repeat; }
+
+/* Contact Section */
+.contact-content {
+  text-align: center;
+}
+.contact-content p {
+  margin: 5px 0;
+}
+.contact-content .quote {
+  font-style: italic;
+  margin-top: 20px;
+}
+.contact-content .quote-author {
+  margin-top: 5px;
+}
