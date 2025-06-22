@@ -218,3 +218,14 @@ section {
   height: auto;
   border-radius: 8px; /* optioneel: mooi afgerond */
 }
+/* FIX: nav-knoppen altijd mooi in 1 rij */
+nav ul {
+  display: flex;
+  flex-wrap: nowrap; /* belangrijk! geen afbreken naar nieuwe lijn */
+  overflow-x: auto;   /* zorgt dat ze scrolbaar blijven op kleine schermen */
+  -webkit-overflow-scrolling: touch;
+}
+
+nav ul li {
+  flex: 0 0 auto; /* breedte afhankelijk van inhoud */
+}
