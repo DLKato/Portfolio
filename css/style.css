@@ -199,3 +199,10 @@ section {
 .contact-content .quote-author {
   margin-top: 5px;
 }
+
+.project-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* ruimte tussen de foto's */
+}
